@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIFAR-10 Image Classifier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    .upload-card {
+      background: rgba(255, 255, 255, 0.9);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      padding: 30px 40px;
+      margin-top: 30px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      transition: transform 0.3s ease;
+    }
+
+    .upload-card:hover {
+      transform: scale(1.02);
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      margin: 20px 0;
+      font-size: 1rem;
+      border: 2px dashed #aaa;
+      border-radius: 10px;
+      width: 100%;
+      cursor: pointer;
+      background: #f9f9f9;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #333;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img.preview {
+      margin-top: 20px;
+      max-width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 CIFAR-10 Image Classifier</h1>
+
+  <div class="upload-card">
+    <form action="/" method="post" enctype="multipart/form-data">
+      <label for="image-upload">Upload an image:</label>
+      <input type="file" id="image-upload" name="image" accept="image/*" required title="Choose an image file to upload" placeholder="Select image file">
+      <br>
+      <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        <strong>Prediction:</strong> {{ prediction }}<br>
+        <strong>Confidence:</strong> {{ confidence }}%
+        <br>
+        <img src="{{ image_url }}" class="preview" alt="Uploaded Image">
+      </div>
+    {% endif %}
+  </div>
+
+  <footer>Made with ❤️ using TensorFlow + Flask</footer>
+
+</body>
+</html>
