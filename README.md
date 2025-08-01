@@ -107,11 +107,14 @@ cifar10-app/
 │   └── index.html        # Web page
 ├── static/
 │   ├── style.css         # Custom/Tailwind CSS
-│   └── preview.png       # Optional screenshot
+│   ├── home.png          # Screenshot of home page
+│   └── predict.png       # Screenshot of prediction result
 ├── uploads/              # For user image uploads
 ├── requirements.txt
 └── README.md
 ```
+
+---
 
 ### Sample `main.py`
 
@@ -176,6 +179,18 @@ if __name__ == '__main__':
 </body>
 </html>
 ```
+
+---
+
+## 📸 Screenshots
+
+### 🔹 Homepage
+
+![Home Screenshot](static/home.png)
+
+### 🔹 Prediction Page
+
+![Prediction Screenshot](static/predict.png)
 
 ---
 
