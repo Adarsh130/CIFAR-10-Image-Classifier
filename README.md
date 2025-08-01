@@ -427,11 +427,11 @@ if __name__ == '__main__':
 
 ### 🔹 Homepage
 
-![Home Screenshot](static/home.png)
+![Home Screenshot](assets/home.png)
 
 ### 🔹 Prediction Page
 
-![Prediction Screenshot](static/predict.png)
+![Prediction Screenshot](assets/predict.png)
 
 ---
 
