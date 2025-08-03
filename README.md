@@ -2,6 +2,9 @@
 
 A complete deep learning project using TensorFlow and Keras to classify images from the CIFAR-10 dataset. Includes model training, evaluation graphs, and a beautiful Flask web interface for real-time image prediction.
 
+🌐 **Live Demo**:  
+👉 [Try it here](https://cifar-image-classifier-bqf8emfbgjarcyc4.centralindia-01.azurewebsites.net/)
+
 ---
 
 ## 📦 Dataset
@@ -9,10 +12,11 @@ A complete deep learning project using TensorFlow and Keras to classify images f
 - CIFAR-10: 60,000 32x32 color images in 10 classes:
   - `airplane`, `automobile`, `bird`, `cat`, `deer`, `dog`, `frog`, `horse`, `ship`, `truck`
 - Automatically loaded using:
-  ```python
-  from tensorflow.keras.datasets import cifar10
-  (x_train, y_train), (x_test, y_test) = cifar10.load_data()
-  ```
+
+```python
+from tensorflow.keras.datasets import cifar10
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+```
 
 ---
 
@@ -96,7 +100,7 @@ print(classification_report(y_test, y_pred_classes))
 
 ## 🌐 Flask Web App
 
-### Project Structure
+### 📁 Project Structure
 
 ```
 cifar10-app/
@@ -116,7 +120,7 @@ cifar10-app/
 
 ---
 
-### Sample `main.py`
+### 🧩 Sample `main.py`
 
 ```python
 from flask import Flask, render_template, request
@@ -151,7 +155,7 @@ if __name__ == '__main__':
 
 ---
 
-### Sample `index.html` (modern frontend)
+### 🖥️ Sample `index.html`
 
 ```html
 <!DOCTYPE html>
@@ -238,4 +242,4 @@ seaborn
 ## 📃 License
 
 MIT License  
-© 2025 
+© 2025
